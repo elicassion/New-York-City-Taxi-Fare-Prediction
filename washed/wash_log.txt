@@ -1,0 +1,97 @@
+F:\DS_WORKSPACE\NYC_TEXI\venv\Scripts\python.exe "E:\Program Files\JetBrains\apps\PyCharm-P\ch-0\182.4323.49\helpers\pydev\pydevconsole.py" 58463 58464
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['F:\\DS_WORKSPACE\\NYC_TEXI', 'F:/DS_WORKSPACE/NYC_TEXI'])
+Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)]
+Type "copyright", "credits" or "license" for more information.
+IPython 5.0.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+PyDev console: using IPython 5.0.0
+Python 3.6.3 |Anaconda custom (64-bit)| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)] on win32
+runfile('F:/DS_WORKSPACE/NYC_TEXI/washing_all.py', wdir='F:/DS_WORKSPACE/NYC_TEXI')
+[1954797/2000000] processed in Total, [1954797/2000000] for this trunk
+ Found Null:[14/14] Abnormal Fare:[134/134] Out of Range:[42663/42663] In Water:[2392/2392]
+-------------------------------------------------------
+[3908839/4000000] processed in Total, [1954042/2000000] for this trunk
+ Found Null:[15/29] Abnormal Fare:[138/272] Out of Range:[43512/86175] In Water:[2293/4685]
+-------------------------------------------------------
+[5863370/6000000] processed in Total, [1954531/2000000] for this trunk
+ Found Null:[10/39] Abnormal Fare:[151/423] Out of Range:[42924/129099] In Water:[2384/7069]
+-------------------------------------------------------
+[7817693/8000000] processed in Total, [1954323/2000000] for this trunk
+ Found Null:[10/49] Abnormal Fare:[135/558] Out of Range:[43187/172286] In Water:[2345/9414]
+-------------------------------------------------------
+[9771690/10000000] processed in Total, [1953997/2000000] for this trunk
+ Found Null:[20/69] Abnormal Fare:[132/690] Out of Range:[43495/215781] In Water:[2356/11770]
+-------------------------------------------------------
+[11726423/12000000] processed in Total, [1954733/2000000] for this trunk
+ Found Null:[10/79] Abnormal Fare:[120/810] Out of Range:[42866/258647] In Water:[2271/14041]
+-------------------------------------------------------
+[13680938/14000000] processed in Total, [1954515/2000000] for this trunk
+ Found Null:[15/94] Abnormal Fare:[146/956] Out of Range:[43018/301665] In Water:[2306/16347]
+-------------------------------------------------------
+[15635542/16000000] processed in Total, [1954604/2000000] for this trunk
+ Found Null:[7/101] Abnormal Fare:[126/1082] Out of Range:[42977/344642] In Water:[2286/18633]
+-------------------------------------------------------
+[17590068/18000000] processed in Total, [1954526/2000000] for this trunk
+ Found Null:[18/119] Abnormal Fare:[150/1232] Out of Range:[42942/387584] In Water:[2364/20997]
+-------------------------------------------------------
+[19544214/20000000] processed in Total, [1954146/2000000] for this trunk
+ Found Null:[20/139] Abnormal Fare:[128/1360] Out of Range:[43337/430921] In Water:[2369/23366]
+-------------------------------------------------------
+[21498511/22000000] processed in Total, [1954297/2000000] for this trunk
+ Found Null:[14/153] Abnormal Fare:[152/1512] Out of Range:[43180/474101] In Water:[2357/25723]
+-------------------------------------------------------
+[23453282/24000000] processed in Total, [1954771/2000000] for this trunk
+ Found Null:[14/167] Abnormal Fare:[131/1643] Out of Range:[42790/516891] In Water:[2294/28017]
+-------------------------------------------------------
+[25407304/26000000] processed in Total, [1954022/2000000] for this trunk
+ Found Null:[11/178] Abnormal Fare:[150/1793] Out of Range:[43518/560409] In Water:[2299/30316]
+-------------------------------------------------------
+[27361812/28000000] processed in Total, [1954508/2000000] for this trunk
+ Found Null:[13/191] Abnormal Fare:[124/1917] Out of Range:[43021/603430] In Water:[2334/32650]
+-------------------------------------------------------
+[29316090/30000000] processed in Total, [1954278/2000000] for this trunk
+ Found Null:[15/206] Abnormal Fare:[151/2068] Out of Range:[43140/646570] In Water:[2416/35066]
+-------------------------------------------------------
+[31270371/32000000] processed in Total, [1954281/2000000] for this trunk
+ Found Null:[19/225] Abnormal Fare:[137/2205] Out of Range:[43183/689753] In Water:[2380/37446]
+-------------------------------------------------------
+[33224766/34000000] processed in Total, [1954395/2000000] for this trunk
+ Found Null:[16/241] Abnormal Fare:[139/2344] Out of Range:[43125/732878] In Water:[2325/39771]
+-------------------------------------------------------
+[35179439/36000000] processed in Total, [1954673/2000000] for this trunk
+ Found Null:[9/250] Abnormal Fare:[158/2502] Out of Range:[42821/775699] In Water:[2339/42110]
+-------------------------------------------------------
+[37133839/38000000] processed in Total, [1954400/2000000] for this trunk
+ Found Null:[12/262] Abnormal Fare:[160/2662] Out of Range:[43054/818753] In Water:[2374/44484]
+-------------------------------------------------------
+[39088356/40000000] processed in Total, [1954517/2000000] for this trunk
+ Found Null:[9/271] Abnormal Fare:[138/2800] Out of Range:[43027/861780] In Water:[2309/46793]
+-------------------------------------------------------
+[41042535/42000000] processed in Total, [1954179/2000000] for this trunk
+ Found Null:[10/281] Abnormal Fare:[139/2939] Out of Range:[43323/905103] In Water:[2349/49142]
+-------------------------------------------------------
+[42997029/44000000] processed in Total, [1954494/2000000] for this trunk
+ Found Null:[8/289] Abnormal Fare:[114/3053] Out of Range:[43048/948151] In Water:[2336/51478]
+-------------------------------------------------------
+[44951696/46000000] processed in Total, [1954667/2000000] for this trunk
+ Found Null:[14/303] Abnormal Fare:[142/3195] Out of Range:[42875/991026] In Water:[2302/53780]
+-------------------------------------------------------
+[46906316/48000000] processed in Total, [1954620/2000000] for this trunk
+ Found Null:[12/315] Abnormal Fare:[130/3325] Out of Range:[42837/1033863] In Water:[2401/56181]
+-------------------------------------------------------
+[48861024/50000000] processed in Total, [1954708/2000000] for this trunk
+ Found Null:[18/333] Abnormal Fare:[136/3461] Out of Range:[42750/1076613] In Water:[2388/58569]
+-------------------------------------------------------
+[50815254/52000000] processed in Total, [1954230/2000000] for this trunk
+ Found Null:[17/350] Abnormal Fare:[133/3594] Out of Range:[43312/1119925] In Water:[2308/60877]
+-------------------------------------------------------
+[52769813/54000000] processed in Total, [1954559/2000000] for this trunk
+ Found Null:[16/366] Abnormal Fare:[149/3743] Out of Range:[43025/1162950] In Water:[2251/63128]
+-------------------------------------------------------
+[54161241/55423856] processed in Total, [1391428/1423856] for this trunk
+ Found Null:[10/376] Abnormal Fare:[103/3846] Out of Range:[30614/1193564] In Water:[1701/64829]
+-------------------------------------------------------
