@@ -59,7 +59,6 @@ def drop_in_water(df, cmap, box, mask):
     return merge_idx
 
 
-
 def process(df, cmap, box, mask):
     ori_length = len(df)
     df = drop_null(df)
@@ -70,6 +69,8 @@ def process(df, cmap, box, mask):
     after_box_len = len(df)
     df = df[drop_in_water(df, cmap, box, mask)]
     processed_length = len(df)
+
+    # df = split_datetime(df)
 
     if os.path.exists(OUTPUT_FILE_PATH):
         df.to_csv(OUTPUT_FILE_PATH, mode='a', header=False, index=False)
@@ -85,6 +86,11 @@ def get_water_mask():
            (m[:, :, 1] + 1e-2 >= 1) &
            (m[:, :, 2] + 1e-2 >= 1))
 
+
+try:
+    pd.read_csv(INPUT_FILE_PATH, nrows=2)
+except:
+    exit(1)
 
 try:
     start = time.time()
