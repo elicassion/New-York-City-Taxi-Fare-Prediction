@@ -12,18 +12,18 @@ FILE_NAME = 'train_w.csv'
 INPUT_FILE_PATH = os.path.join(DATA_DIR, FILE_NAME)
 
 WASHED_DATA_DIR = 'washed'
-WASHED_FILE_NAME = 'train_wf.csv'
+WASHED_FILE_NAME = 'train_wfd.csv'
 OUTPUT_FILE_PATH = os.path.join(WASHED_DATA_DIR, WASHED_FILE_NAME)
 if not os.path.exists(WASHED_DATA_DIR):
     os.makedirs(WASHED_DATA_DIR)
 
-CHUNKSIZE = 10000000
+CHUNKSIZE = 2000000
 
 
 
 def split_datetime(df):
-    new_years, new_months, new_days, new_hours = zip(*[(int(d[0:4]), int(d[5:7]), int(d[8:10]), int(d[11:13])) for d in df.pickup_datetime])
-    df = df.assign(pickup_year=new_years, pickup_month=new_months, pickup_day=new_days, pickup_hour=new_hours)
+    new_years, new_months, new_days, new_daytime = zip(*[(int(d[0:4]), int(d[5:7]), int(d[8:10]), int(d[11:13])*3600+int(d[14:16])*60+int(d[17:19])) for d in df.pickup_datetime])
+    df = df.assign(pickup_year=new_years, pickup_month=new_months, pickup_day=new_days, pickup_daytime=new_daytime)
     return df.drop(columns=['pickup_datetime', 'key'])
 
 
