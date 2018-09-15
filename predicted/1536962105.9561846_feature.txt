@@ -1,0 +1,3 @@
+distance, pickup_longitude, dropoff_longitude, pickup_hour
+10000000 data points used.
+polynomial regression model
