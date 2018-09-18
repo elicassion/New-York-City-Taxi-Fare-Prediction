@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 from sklearn.base import TransformerMixin
-import lightgbm as lgb
+import lightgbm as lgbm
 
 DATA_DIR = 'washed'
 FILE_NAME = 'train_w.csv'
@@ -41,7 +41,7 @@ COLUMN_NAMES = ['distance',
 
 EMPIRE_STATE_BUILDING = (-73.985428, 40.748817)
 
-CHUNKSIZE = 500000
+CHUNKSIZE = 1000000
 
 JFK_RANGE = (-73.822381, -73.752368, 40.641365, 40.664807)  #40.641312,-73.778137
 LGA_RANGE = (-73.885075, -73.854447, 40.766593, 40.776928) #40.776928,-73.873962
@@ -133,6 +133,8 @@ def write_predicted(d, modelname, datasize, param='', rmse='na'):
         f.close()
 # exit()
 
+# xgboost
+
 xg_train = xgb.DMatrix(train_in, train_f)
 xg_test = xgb.DMatrix(test_in, test_f)
 xg_params = {
@@ -158,3 +160,47 @@ xg_pY = xg_r.predict(xgb.DMatrix(testdf[COLUMN_NAMES]))
 xg_predicted = testdf[['key']].copy()
 xg_predicted = xg_predicted.assign(fare_amount=pd.Series(xg_pY))
 write_predicted(xg_predicted, 'xgboost regression', CHUNKSIZE, param=xg_params, rmse=xg_rmse)
+
+
+#lightGBM
+
+# lgbm_params = {
+#         'boosting_type':'gbdt',
+#         'objective': 'regression',
+#         'nthread': 4,
+#         'num_leaves': 31,
+#         'learning_rate': 0.05,
+#         'max_depth': -1,
+#         'subsample': 0.8,
+#         'bagging_fraction' : 1,
+#         'max_bin' : 5000 ,
+#         'bagging_freq': 20,
+#         'colsample_bytree': 0.6,
+#         'metric': 'rmse',
+#         'min_split_gain': 0.5,
+#         'min_child_weight': 1,
+#         'min_child_samples': 10,
+#         'scale_pos_weight':1,
+#         'zero_as_missing': True,
+#         'seed':0,
+#         'num_rounds':50000
+#     }
+# catagorical_features = ['pickup_year',
+#                 'jfk_trip',
+#                 'lga_trip',
+#                 'ewr_trip',
+#                 'base_type',]
+# lgbm_train = lgbm.Dataset(train_in, train_f, silent=False, categorical_feature=catagorical_features)
+# lgbm_test = lgbm.Dataset(test_in, test_f, silent=False, categorical_feature=catagorical_features)
+# lgbm_r = lgbm.train(lgbm_params, 
+#                     train_set=lgbm_train, 
+#                     valid_sets=lgbm_test,
+#                     num_boost_round=10000,
+#                     early_stopping_rounds=500,
+#                     verbose_eval=500)
+# lgbm_rmse = np.sqrt(mean_squared_error(test_f, lgbm_r.predict(test_in, num_iteration=lgbm_r.best_iteration)))
+# print ("MSE: {}".format(lgbm_rmse))
+# lgbm_pY = lgbm_r.predict(testdf[COLUMN_NAMES], num_iteration = lgbm_r.best_iteration)
+# lgbm_predicted = testdf[['key']].copy()
+# lgbm_predicted = lgbm_predicted.assign(fare_amount=pd.Series(lgbm_pY))
+# write_predicted(lgbm_predicted, 'lightGBM regression', CHUNKSIZE, param=lgbm_params, rmse=lgbm_rmse)
