@@ -22,8 +22,8 @@ CHUNKSIZE = 2000000
 
 
 def split_datetime(df):
-    new_years, new_months, new_days, new_daytime = zip(*[(int(d[0:4]), int(d[5:7]), int(d[8:10]), int(d[11:13])*3600+int(d[14:16])*60+int(d[17:19])) for d in df.pickup_datetime])
-    df = df.assign(pickup_year=new_years, pickup_month=new_months, pickup_day=new_days, pickup_daytime=new_daytime)
+    new_years, new_months, new_days, new_daytime, new_weekday = zip(*[(d.year, d.month, d.day, d.hour, d.weekday()) for d in df.pickup_datetime])
+    df = df.assign(pickup_year=new_years, pickup_month=new_months, pickup_day=new_days, pickup_daytime=new_daytime, pickup_weekday=new_weekday)
     return df.drop(columns=['pickup_datetime'])
 
 
@@ -33,7 +33,7 @@ try:
     processed_sum = 0
     if os.path.exists(OUTPUT_FILE_PATH):
         os.remove(OUTPUT_FILE_PATH)
-    for trunk in pd.read_csv(INPUT_FILE_PATH, chunksize = CHUNKSIZE):
+    for trunk in pd.read_csv(INPUT_FILE_PATH, chunksize = CHUNKSIZE, parse_dates=['pickup_datetime'], infer_datetime_format=True):
         trunk = split_datetime(trunk)
         if os.path.exists(OUTPUT_FILE_PATH):
             trunk.to_csv(OUTPUT_FILE_PATH, mode='a', header=False, index=False)
