@@ -34,7 +34,7 @@ def drop_null(df):
     return df.dropna(how='any', axis='rows')
 
 def drop_fare(df):
-    return (df.fare_amount>0) & (df.fare_amount<=300)
+    return (df.fare_amount>=2.5) & (df.fare_amount<=300)
 
 def drop_out_of_box(df, box):
     return (df.pickup_latitude >= box[2]) & (df.pickup_latitude <= box[3]) & \
